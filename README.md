@@ -1,78 +1,177 @@
-<<<<<<< HEAD
-# Welcome to your Lovable project
+# 🎓 Student Management System — Frontend (React)
 
-## Project info
+This repository contains the **Frontend** of the **Student Management System**, built using **React (Vite)**. It provides a modern, responsive user interface for authentication and student management and communicates with a Spring Boot backend via REST APIs.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+---
 
-## How can I edit this code?
+## 🚀 Overview
 
-There are several ways of editing your application.
+This frontend application enables:
 
-**Use Lovable**
+* User authentication (Admin / User roles)
+* Role-based dashboards
+* CRUD operations for students (via backend APIs)
+* Secure communication using JWT (optional)
+* Smooth UI experience with component-based architecture
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+It is designed to work seamlessly with the **Spring Boot backend** in a separate repository.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## ✨ Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+### 🔹 Authentication
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+* Login page with role selection
+* JWT token storage in `localStorage`
+* Protected routes based on role
 
-Follow these steps:
+### 🔹 Admin Dashboard
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* View all students
+* Add new student
+* Update student details
+* Delete student records
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### 🔹 User Dashboard
 
-# Step 3: Install the necessary dependencies.
-npm i
+* View student details
+* Add personal student record
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### 🔹 UI/UX
+
+* Clean component structure
+* Responsive layout
+* Error handling for failed requests
+
+---
+
+## 🛠️ Technologies Used
+
+* **React (Vite)**
+* **TypeScript / JavaScript**
+* **Axios** (for API calls)
+* **React Router** (for navigation)
+* **HTML & CSS**
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+│
+├── components/
+│   ├── Login.tsx
+│   ├── AdminDashboard.tsx
+│   ├── UserDashboard.tsx
+│
+├── services/
+│   └── api.js
+│
+├── App.tsx
+└── main.tsx
+```
+
+---
+
+## 🔗 Connection with Backend
+
+This frontend is connected to the Spring Boot backend running at:
+
+```
+http://localhost:8080
+```
+
+Axios is configured in:
+
+```
+src/services/api.js
+```
+
+Example:
+
+```js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "http://localhost:8080"
+});
+
+export default api;
+```
+
+---
+
+## ▶️ How to Run Locally
+
+### 1️⃣ Clone this repository
+
+```bash
+git clone https://github.com/chaitanyapawar99/Student-Managment-System-Frontend.git
+cd Student-Managment-System-Frontend
+```
+
+### 2️⃣ Install dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Start the development server
+
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The app will run at:
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```
+http://localhost:5173
+```
 
-**Use GitHub Codespaces**
+---
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🔐 Authentication (If JWT is enabled)
 
-## What technologies are used for this project?
+After successful login, the JWT token is stored in `localStorage` and sent automatically with every API request:
 
-This project is built with:
+```
+Authorization: Bearer <your-token>
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+---
 
-## How can I deploy this project?
+## 🧠 What this project demonstrates
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+* How React communicates with Spring Boot REST APIs
+* Role-based UI navigation
+* Component-based design
+* State management using React hooks
+* Handling HTTP requests using Axios
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+## 🔗 Backend Repository
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+This frontend works with the following backend repository:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
-=======
-# Student-Managment-System-Frontend
-React frontend for Student Management System
->>>>>>> b60ffd80103799aaf0384d26752e225a4ced5475
+```
+https://github.com/chaitanyapawar99/student-backend
+```
+
+*(If your backend repo has a different name, tell me and I’ll update this link.)*
+
+---
+
+## 🔮 Future Enhancements
+
+* Better UI with Tailwind / Material UI
+* Pagination for student records
+* Search & filter functionality
+* Profile management
+* Cloud deployment (Vercel + Render)
+
+---
+
+⭐ If you find this project useful, please give it a star!
